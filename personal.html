@@ -133,7 +133,7 @@
     <!-- Scroll Progress Top Bar -->
     <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-skyDeep via-mintFresh to-skyDeep z-[100] w-0 transition-all duration-75"></div>
 
-    <!-- START REUSABLE NAVIGATION BAR COMPONENT -->
+    <!-- START REUSABLE NAVIGATION BAR COMPONENT (Minimal Brand Header) -->
     <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-slate-900/80 border-b border-skyBreeze/50 dark:border-slate-800 shadow-sm transition-all duration-300">
         <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
             <!-- Brand Logo Group -->
@@ -147,25 +147,12 @@
                 </div>
             </div>
             
-            <!-- Navigation Menu & Actions -->
+            <!-- Global Theme Actions -->
             <div class="flex items-center space-x-3">
-                <!-- Desktop Navigation Menu -->
-                <nav class="hidden md:flex items-center space-x-2 bg-slate-50 dark:bg-slate-800 p-1 rounded-xl border border-slate-200/50 dark:border-slate-700">
-                    <button onclick="switchTab('growth')" id="nav-btn-growth" class="nav-item px-4 py-2 text-sm font-bold rounded-lg transition-all duration-300 text-white bg-gradient-to-r from-skyDeep to-sky-600 shadow-sm">
-                        GROWTH
-                    </button>
-                    <button onclick="switchTab('philosophy')" id="nav-btn-philosophy" class="nav-item px-4 py-2 text-sm font-bold rounded-lg transition-all duration-300 text-slate-500 dark:text-slate-400 hover:text-darkSlate dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700">
-                        PHILOSOPHY
-                    </button>
-                    <button onclick="switchTab('vitality')" id="nav-btn-vitality" class="nav-item px-4 py-2 text-sm font-bold rounded-lg transition-all duration-300 text-slate-500 dark:text-slate-400 hover:text-darkSlate dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700">
-                        VITALITY
-                    </button>
-                </nav>
-
                 <!-- Premium Light/Dark Mode Toggle Button -->
                 <button onclick="toggleDarkMode()" class="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-darkSlate dark:text-white transition-colors border border-slate-200/50 dark:border-slate-700 focus:outline-none" aria-label="다크 모드 토글">
                     <!-- Sun Icon -->
-                    <svg id="theme-sun-icon" class="w-5 h-5 hidden dark:block text-amber-400 animate-spin-slow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <svg id="theme-sun-icon" class="w-5 h-5 hidden dark:block text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <circle cx="12" cy="12" r="5"></circle>
                         <line x1="12" y1="1" x2="12" y2="3"></line>
                         <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -181,32 +168,7 @@
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
                 </button>
-
-                <!-- Mobile Hamburger Menu Toggle Button -->
-                <div class="md:hidden flex items-center">
-                    <button onclick="toggleMobileMenu()" id="mobile-hamburger-btn" class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-darkSlate dark:text-white transition-colors focus:outline-none" aria-label="메뉴 열기">
-                        <svg id="hamburger-icon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                        <svg id="close-icon" class="w-6 h-6 hidden transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                        </svg>
-                    </button>
-                </div>
             </div>
-        </div>
-
-        <!-- Mobile Menu Drawer -->
-        <div id="mobile-drawer" class="hidden md:hidden bg-white/95 dark:bg-slate-900/95 border-b border-skyBreeze/50 dark:border-slate-800 absolute top-full left-0 w-full px-4 py-4 space-y-2 shadow-lg transition-all duration-300">
-            <button onclick="switchTab('growth'); toggleMobileMenu()" id="mobile-nav-btn-growth" class="mobile-nav-item w-full py-3 px-4 text-left text-sm font-bold rounded-xl transition-all duration-200 text-white bg-gradient-to-r from-skyDeep to-sky-600 shadow-sm flex items-center gap-2">
-                <span>⚡</span> GROWTH (소개)
-            </button>
-            <button onclick="switchTab('philosophy'); toggleMobileMenu()" id="mobile-nav-btn-philosophy" class="mobile-nav-item w-full py-3 px-4 text-left text-sm font-bold rounded-xl transition-all duration-200 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 flex items-center gap-2">
-                <span>💡</span> PHILOSOPHY (개발 신념)
-            </button>
-            <button onclick="switchTab('vitality'); toggleMobileMenu()" id="mobile-nav-btn-vitality" class="mobile-nav-item w-full py-3 px-4 text-left text-sm font-bold rounded-xl transition-all duration-200 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 flex items-center gap-2">
-                <span>🏃‍♂️</span> VITALITY (취미)
-            </button>
         </div>
     </header>
     <!-- END REUSABLE NAVIGATION BAR COMPONENT -->
@@ -214,26 +176,28 @@
     <!-- MAIN BRANDING DASHBOARD -->
     <main class="flex-grow max-w-4xl w-full mx-auto px-4 py-8 relative z-10">
         
-        <!-- INTRO HERO CONTAINER -->
-        <div class="bg-white/90 dark:bg-slate-900/80 rounded-3xl p-6 md:p-8 shadow-neo border border-white/60 dark:border-slate-800 mb-8 backdrop-blur-sm relative overflow-hidden transition-all duration-300">
+        <!-- INTRO HERO CONTAINER (Always visible at the top as a unified dashboard cover) -->
+        <div class="bg-white/90 dark:bg-slate-900/80 rounded-3xl p-6 md:p-8 shadow-neo border border-white/60 dark:border-slate-800 mb-6 backdrop-blur-sm relative overflow-hidden transition-all duration-300">
             <div class="absolute -right-24 -top-24 w-64 h-64 bg-skyBreeze/50 dark:bg-skyDeep/10 rounded-full blur-3xl opacity-60"></div>
             <div class="absolute -left-24 -bottom-24 w-64 h-64 bg-emerald-50/50 dark:bg-mintFresh/10 rounded-full blur-3xl opacity-60"></div>
 
             <div class="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-6">
-                <!-- Profile Image Element (Using image_e48497.png with Safe Fallback Layering) -->
+                <!-- Profile Image Element with Silent Hybrid Loader -->
                 <div class="relative w-32 h-32 md:w-36 md:h-36 shrink-0 group">
                     <div class="absolute inset-0 bg-gradient-to-tr from-skyDeep to-mintFresh rounded-2xl rotate-3 scale-105 opacity-80 blur transition-transform duration-300 group-hover:rotate-6"></div>
                     
-                    <!-- Fallback Layer (z-10) & Silent Image Layer (z-20) -->
                     <div class="relative w-full h-full bg-gradient-to-br from-skyBreeze to-sky-100 dark:from-slate-800 dark:to-slate-950 rounded-2xl overflow-hidden border-2 border-white dark:border-slate-700 shadow-md flex items-center justify-center">
-                        <span class="absolute text-skyDeep dark:text-skyBreeze font-extrabold text-xl tracking-wider select-none z-10">이수창</span>
+                        <!-- Background Text Layer (Always safe fallback, hides only when image succeeds) -->
+                        <span id="profile-text-fallback" class="absolute text-skyDeep dark:text-skyBreeze font-extrabold text-xl tracking-wider select-none z-10">이수창</span>
                         
+                        <!-- Real Image Layer with dual failover paths -->
                         <img 
+                            id="profile-img"
                             src="image_e48497.png" 
                             alt="이수창 프로필 사진" 
                             class="absolute inset-0 w-full h-full object-cover object-center z-20 opacity-0 transition-opacity duration-300"
-                            onload="this.classList.remove('opacity-0');"
-                            onerror="this.src='KakaoTalk_20260513_143914672.jpg'; this.onerror=function(){this.style.display='none';};"
+                            onload="onImageLoadSuccess()"
+                            onerror="onImageLoadError()"
                         />
                     </div>
                 </div>
@@ -258,279 +222,368 @@
             </div>
         </div>
 
-        <!-- TAB 1 CONTENT: GROWTH (ABOUT ME) -->
-        <div id="tab-growth" class="tab-content active space-y-6">
-            
-            <!-- Core message banner -->
-            <div class="bg-gradient-to-r from-sky-50 to-indigo-50 dark:from-slate-800 dark:to-indigo-950/40 border-l-4 border-skyDeep p-5 rounded-r-2xl shadow-sm">
-                <p class="text-xs uppercase tracking-wider font-extrabold text-skyDeep dark:text-skyBreeze mb-1">Growth Core Message</p>
-                <h3 class="text-xl font-bold text-darkSlate dark:text-white">"배움과 협업에 진심인 교육생 이수창입니다."</h3>
+        <!-- LOCALIZED TAB DECK SWITCHER (Physically attached to the content card below - 2x2 on Mobile, 4x1 on desktop) -->
+        <div class="mb-4 bg-white/60 dark:bg-slate-900/60 p-1.5 rounded-2xl border border-slate-200/50 dark:border-slate-800 shadow-sm backdrop-blur-sm">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-1.5">
+                <button onclick="switchTab('growth')" id="nav-btn-growth" class="nav-item py-3 text-xs md:text-sm font-extrabold rounded-xl transition-all duration-300 text-white bg-gradient-to-r from-skyDeep to-sky-600 shadow-sm focus:outline-none">
+                    ⚡ GROWTH (소개)
+                </button>
+                <button onclick="switchTab('philosophy')" id="nav-btn-philosophy" class="nav-item py-3 text-xs md:text-sm font-extrabold rounded-xl transition-all duration-300 text-slate-500 dark:text-slate-400 hover:text-darkSlate dark:hover:text-white hover:bg-white/80 dark:hover:bg-slate-800 focus:outline-none">
+                    💡 PHILOSOPHY (개발 신념)
+                </button>
+                <button onclick="switchTab('vitality')" id="nav-btn-vitality" class="nav-item py-3 text-xs md:text-sm font-extrabold rounded-xl transition-all duration-300 text-slate-500 dark:text-slate-400 hover:text-darkSlate dark:hover:text-white hover:bg-white/80 dark:hover:bg-slate-800 focus:outline-none">
+                    🏃‍♂️ VITALITY (취미)
+                </button>
+                <button onclick="switchTab('contact')" id="nav-btn-contact" class="nav-item py-3 text-xs md:text-sm font-extrabold rounded-xl transition-all duration-300 text-slate-500 dark:text-slate-400 hover:text-darkSlate dark:hover:text-white hover:bg-white/80 dark:hover:bg-slate-800 focus:outline-none">
+                    📞 CONTACT (연락처)
+                </button>
             </div>
-
-            <!-- Keynotes (Interactive cards) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                
-                <!-- Keyword Card 1: Consistency -->
-                <div class="bg-white dark:bg-slate-900/80 rounded-2xl p-6 shadow-neo border border-slate-100 dark:border-slate-800 hover:shadow-premium hover:-translate-y-1 transition-all duration-300">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-bold text-skyDeep dark:text-skyBreeze bg-sky-50 dark:bg-skyDeep/20 px-3 py-1.5 rounded-full"># 핵심 키워드</span>
-                        <span class="text-emerald-500 dark:text-mintFresh font-bold text-xs uppercase tracking-widest">Growth Factor</span>
-                    </div>
-                    <h4 class="text-2xl font-bold text-darkSlate dark:text-white mt-3 mb-2 flex items-center gap-2">
-                        <span>#꾸준함</span>
-                        <span class="text-sm font-normal text-slateGray dark:text-slate-400">(Consistency)</span>
-                    </h4>
-                    <p class="text-slateGray dark:text-slate-300 text-sm leading-relaxed">
-                        목표한 바를 포기하지 않고 묵묵히 정진하는 과정을 즐깁니다. 지름길보다는 단단한 기초를 다집니다.
-                    </p>
-                    
-                    <!-- Click Trigger Button for Detail Reveal -->
-                    <button onclick="toggleKeywordDetail('detail-consistency')" class="mt-4 text-xs font-bold text-skyDeep dark:text-skyBreeze hover:text-sky-700 flex items-center gap-1 focus:outline-none">
-                        <span>세부 철학 및 스토리 열어보기</span>
-                        <svg id="arrow-detail-consistency" class="w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </button>
-
-                    <!-- Hidden Slide Content -->
-                    <div id="detail-consistency" class="hidden mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-300 space-y-2 bg-slate-50 dark:bg-slate-800/50 p-3 rounded-lg leading-relaxed">
-                        <p class="font-semibold text-skyDeep dark:text-skyBreeze">"단 하나의 배움이라도 매일 내 것으로 만드는 힘"</p>
-                        <p>매일 배운 개념과 마주한 문제들을 상세히 복습하며 지식을 체계적으로 기록합니다. 어려운 설계 방식이나 신선한 로직도 끝까지 디버깅하여 동작의 전 과정을 이해하고 넘어가고자 합니다.</p>
-                    </div>
-                </div>
-
-                <!-- Keyword Card 2: Novelty -->
-                <div class="bg-white dark:bg-slate-900/80 rounded-2xl p-6 shadow-neo border border-slate-100 dark:border-slate-800 hover:shadow-premium hover:-translate-y-1 transition-all duration-300">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-bold text-mintDark dark:text-mintFresh bg-emerald-50 dark:bg-mintFresh/20 px-3 py-1.5 rounded-full"># 도전과 가치</span>
-                        <span class="text-skyDeep dark:text-skyBreeze font-bold text-xs uppercase tracking-widest">Tech Adventure</span>
-                    </div>
-                    <h4 class="text-2xl font-bold text-darkSlate dark:text-white mt-3 mb-2 flex items-center gap-2">
-                        <span>#새로움</span>
-                        <span class="text-sm font-normal text-slateGray dark:text-slate-400">(Novelty)</span>
-                    </h4>
-                    <p class="text-slateGray dark:text-slate-300 text-sm leading-relaxed">
-                        익숙함에 안주하지 않고 미지의 기술과 새로운 생태계를 탐구하는 도전 속에서 지혜를 넓혀 갑니다.
-                    </p>
-                    
-                    <!-- Click Trigger Button for Detail Reveal -->
-                    <button onclick="toggleKeywordDetail('detail-novelty')" class="mt-4 text-xs font-bold text-mintDark dark:text-mintFresh hover:text-mintFresh flex items-center gap-1 focus:outline-none">
-                        <span>세부 철학 및 스토리 열어보기</span>
-                        <svg id="arrow-detail-novelty" class="w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </button>
-
-                    <!-- Hidden Slide Content -->
-                    <div id="detail-novelty" class="hidden mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-300 space-y-2 bg-slate-50 dark:bg-slate-800/50 p-3 rounded-lg leading-relaxed">
-                        <p class="font-semibold text-mintDark dark:text-mintFresh">"변화와 트렌드를 즐겁게 마주하는 태도"</p>
-                        <p>웹 기술은 언제나 생명체처럼 변합니다. 낯선 설계 프레임워크나 툴에 기가 죽기보다는, 이를 '풀어낼 재미있는 퍼즐'로 받아들이는 호기심과 실행력이 수창님 성장의 원동력입니다.</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- ISFJ Detailed analysis -->
-            <div class="bg-white dark:bg-slate-900/80 rounded-3xl p-6 md:p-8 shadow-neo border border-slate-100 dark:border-slate-800">
-                <h4 class="text-lg font-bold text-darkSlate dark:text-white mb-4 flex items-center gap-2">
-                    <span class="p-2 rounded-lg bg-sky-100 dark:bg-skyDeep/20 text-skyDeep dark:text-skyBreeze">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                    </span>
-                    성격유형 기반 학습 태도 (ISFJ: 수호자형 개발자)
-                </h4>
-                
-                <div class="space-y-4">
-                    <div>
-                        <div class="flex justify-between text-xs font-semibold mb-1">
-                            <span class="text-slateGray dark:text-slate-400">성실성 &amp; 디테일 (책임감 있는 구현)</span>
-                            <span class="text-skyDeep dark:text-skyBreeze">95%</span>
-                        </div>
-                        <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
-                            <div class="bg-skyDeep h-2 rounded-full" style="width: 95%"></div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <div class="flex justify-between text-xs font-semibold mb-1">
-                            <span class="text-slateGray dark:text-slate-400">팀워크 &amp; 경청 (서로를 배려하는 소통 기술)</span>
-                            <span class="text-mintDark dark:text-mintFresh">90%</span>
-                        </div>
-                        <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
-                            <div class="bg-mintFresh h-2 rounded-full" style="width: 90%"></div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="flex justify-between text-xs font-semibold mb-1">
-                            <span class="text-slateGray dark:text-slate-400">유연성 및 새로운 기술 적응</span>
-                            <span class="text-indigo-600 dark:text-indigo-400">88%</span>
-                        </div>
-                        <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
-                            <div class="bg-indigo-500 h-2 rounded-full" style="width: 88%"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-6 p-4 bg-emerald-50/50 dark:bg-emerald-950/20 rounded-xl border border-emerald-100/50 dark:border-emerald-900/30 text-xs text-slateGray dark:text-slate-300 leading-relaxed">
-                    <strong>ISFJ의 학습 장점:</strong> 타인의 필요를 헤아려 공동의 과업에 헌신적이며 조용히 완성도 높은 백업을 완수합니다. 개발에 임할 때 세심한 주석과 철저한 자가 검토를 통해 안정적이고 오류가 적은 코드를 빌드하는 능력이 뛰어납니다.
-                </div>
-            </div>
-
         </div>
 
-        <!-- TAB 2 CONTENT: PHILOSOPHY (DEVELOPMENT BELIEFS) -->
-        <div id="tab-philosophy" class="tab-content hidden space-y-6">
+        <!-- TAB CONTENT CARDS CONTAINER (Unifies with the switcher above) -->
+        <div class="relative min-h-[400px]">
             
-            <!-- Core message banner -->
-            <div class="bg-gradient-to-r from-blue-50 to-emerald-50 dark:from-slate-800 dark:to-emerald-950/40 border-l-4 border-indigo-400 p-5 rounded-r-2xl shadow-sm">
-                <p class="text-xs uppercase tracking-wider font-extrabold text-indigo-500 dark:text-indigo-300 mb-1">My Dev Philosophy</p>
-                <h3 class="text-xl font-bold text-darkSlate dark:text-white">"동료들의 성장판을 자극하고 기꺼이 배울 점이 되어주는 개발자가 되고 싶습니다."</h3>
-            </div>
-
-            <!-- Philosophy Grid Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Belief 1: Solid Base -->
-                <div class="bg-white dark:bg-slate-900/80 rounded-2xl p-6 shadow-neo border border-slate-100 dark:border-slate-800 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 bg-skyBreeze dark:bg-skyDeep/20 text-skyDeep rounded-xl flex items-center justify-center font-bold text-xl mb-4">🧱</div>
-                        <h4 class="text-lg font-bold text-darkSlate dark:text-white mb-2">단단한 기본기 중심</h4>
-                        <p class="text-xs text-slateGray dark:text-slate-300 leading-relaxed">
-                            화려한 프레임워크의 변화 속에서도 결국 중심을 잡아주는 것은 언어의 기초 지식과 논리입니다. 기술의 부채를 만들지 않는 단단하고 투명한 작동 방식에 집중합니다.
-                        </p>
-                    </div>
-                    <span class="text-[11px] font-semibold text-skyDeep dark:text-skyBreeze mt-4 block">#지름길보다_바른길</span>
-                </div>
-
-                <!-- Belief 2: Clean Documenting -->
-                <div class="bg-white dark:bg-slate-900/80 rounded-2xl p-6 shadow-neo border border-slate-100 dark:border-slate-800 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 bg-emerald-50 dark:bg-mintFresh/20 text-mintDark rounded-xl flex items-center justify-center font-bold text-xl mb-4">📝</div>
-                        <h4 class="text-lg font-bold text-darkSlate dark:text-white mb-2">기록하고 소통하기</h4>
-                        <p class="text-xs text-slateGray dark:text-slate-300 leading-relaxed">
-                            동료가 빠르게 파악하고 이어 쓸 수 있는 흐름을 설계합니다. 명쾌한 문서화와 이해하기 쉬운 명명법은 성공적인 협업 프로세스의 기초 씨앗이 됩니다.
-                        </p>
-                    </div>
-                    <span class="text-[11px] font-semibold text-mintDark dark:text-mintFresh mt-4 block">#협업을_이끄는_기록</span>
-                </div>
-
-                <!-- Belief 3: User First -->
-                <div class="bg-white dark:bg-slate-900/80 rounded-2xl p-6 shadow-neo border border-slate-100 dark:border-slate-800 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 bg-indigo-50 dark:bg-indigo-500/20 text-indigo-500 rounded-xl flex items-center justify-center font-bold text-xl mb-4">🤝</div>
-                        <h4 class="text-lg font-bold text-darkSlate dark:text-white mb-2">사려 깊은 개발</h4>
-                        <p class="text-xs text-slateGray dark:text-slate-300 leading-relaxed">
-                            수치적인 동작만을 충족하는 것이 아니라, 사용자가 진정으로 머무르며 편안함을 느낄 수 있는 세심한 UX 디테일과 인터랙션 경험을 중시합니다.
-                        </p>
-                    </div>
-                    <span class="text-[11px] font-semibold text-indigo-500 dark:text-indigo-300 mt-4 block">#배려가_담긴_인터랙션</span>
-                </div>
-            </div>
-
-            <!-- Interactive Value Slider / Mini thought board -->
-            <div class="bg-white dark:bg-slate-900/80 rounded-3xl p-6 md:p-8 shadow-neo border border-slate-100 dark:border-slate-800">
-                <h4 class="text-lg font-bold text-darkSlate dark:text-white mb-3">수창이 바라보는 소중한 개발 가치</h4>
-                <p class="text-xs text-slateGray dark:text-slate-400 mb-6">원하는 가치를 클릭해보세요! 수창님이 지향하는 가치에 대한 한 줄 신념이 공개됩니다.</p>
+            <!-- TAB 1 CONTENT: GROWTH (ABOUT ME) -->
+            <div id="tab-growth" class="tab-content active space-y-6">
                 
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                    <button onclick="revealQuote('harmony')" class="py-3 px-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-skyDeep rounded-xl text-xs font-bold transition-all text-center dark:text-slate-300">
-                        🤝 협업과 소통
-                    </button>
-                    <button onclick="revealQuote('rolemodel')" class="py-3 px-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-skyDeep rounded-xl text-xs font-bold transition-all text-center dark:text-slate-300">
-                        🌟 배울 점이 있는 모델
-                    </button>
-                    <button onclick="revealQuote('empathy')" class="py-3 px-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-skyDeep rounded-xl text-xs font-bold transition-all text-center dark:text-slate-300">
-                        🧠 사용자 공감
-                    </button>
-                    <button onclick="revealQuote('clean')" class="py-3 px-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-skyDeep rounded-xl text-xs font-bold transition-all text-center dark:text-slate-300">
-                        💎 클린 코드
-                    </button>
+                <!-- Core message banner -->
+                <div class="bg-gradient-to-r from-sky-50 to-indigo-50 dark:from-slate-800/40 dark:to-indigo-950/20 border-l-4 border-skyDeep p-5 rounded-r-2xl shadow-sm">
+                    <p class="text-xs uppercase tracking-wider font-extrabold text-skyDeep dark:text-skyBreeze mb-1">Growth Core Message</p>
+                    <h3 class="text-xl font-bold text-darkSlate dark:text-white">"배움과 협업에 진심인 교육생 이수창입니다."</h3>
                 </div>
 
-                <!-- Live quotes display slot -->
-                <div class="mt-6 p-4 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800/40 dark:to-slate-850 rounded-2xl min-h-[70px] flex items-center justify-center text-center">
-                    <p id="quote-display-text" class="text-xs sm:text-sm font-semibold text-slateGray dark:text-slate-300 leading-relaxed">
-                        위 가치 버튼 중 하나를 클릭하면 수창님의 세부 신념을 살펴볼 수 있습니다. ✨
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- TAB 3 CONTENT: VITALITY (HOBBIES & COOLDOWN) -->
-        <div id="tab-vitality" class="tab-content hidden space-y-6">
-            
-            <!-- Core message banner -->
-            <div class="bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-slate-800 dark:to-teal-950/40 border-l-4 border-mintFresh p-5 rounded-r-2xl shadow-sm">
-                <p class="text-xs uppercase tracking-wider font-extrabold text-mintDark dark:text-mintFresh mb-1">Vitality Core Message</p>
-                <h3 class="text-xl font-bold text-darkSlate dark:text-white">"건강한 일상과 다채로운 경험으로 몰입의 밑바탕을 다집니다."</h3>
-            </div>
-
-            <!-- Introduction to light hobbies (Gym, Travel) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Hobby 1: Weight Training (헬스) -->
-                <div class="bg-white dark:bg-slate-900/80 rounded-3xl p-6 border border-slate-100 dark:border-slate-800 shadow-neo flex flex-col justify-between overflow-hidden relative">
-                    <div class="absolute -right-8 -bottom-8 w-24 h-24 bg-skyBreeze/40 dark:bg-skyDeep/10 rounded-full"></div>
-                    <div>
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="text-3xl">🏋️‍♂️</span>
-                            <div>
-                                <h4 class="font-extrabold text-lg text-darkSlate dark:text-white">체력을 기르는 헬스</h4>
-                                <span class="text-[10px] text-skyDeep dark:text-skyBreeze font-bold tracking-wider uppercase">Strength &amp; Focus</span>
-                            </div>
-                        </div>
-                        <p class="text-xs text-slateGray dark:text-slate-300 leading-relaxed mb-4">
-                            모든 몰입의 근본은 지치지 않는 탄탄한 체력에서 나온다고 믿습니다. 우직하게 무게를 올리는 웨이트 트레이닝은 개발 공부의 긴 레이스를 끈기 있게 견딜 수 있게 하는 든든한 일상의 코어 루틴입니다.
-                        </p>
-                    </div>
-                    <div class="flex items-center justify-between text-[11px] font-bold text-skyDeep dark:text-skyBreeze bg-sky-50 dark:bg-skyDeep/20 px-3 py-2 rounded-xl mt-2 z-10">
-                        <span>꾸준함의 또 다른 이름</span>
-                        <span>매주 3~4회 단련 ⚡</span>
-                    </div>
-                </div>
-
-                <!-- Hobby 2: Travel (여행) -->
-                <div class="bg-white dark:bg-slate-900/80 rounded-3xl p-6 border border-slate-100 dark:border-slate-800 shadow-neo flex flex-col justify-between overflow-hidden relative">
-                    <div class="absolute -right-8 -bottom-8 w-24 h-24 bg-emerald-50/40 dark:bg-mintFresh/10 rounded-full"></div>
-                    <div>
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="text-3xl">✈️</span>
-                            <div>
-                                <h4 class="font-extrabold text-lg text-darkSlate dark:text-white">새로운 시야를 여는 여행</h4>
-                                <span class="text-[10px] text-mintDark dark:text-mintFresh font-bold tracking-wider uppercase">Exploration &amp; Insight</span>
-                            </div>
-                        </div>
-                        <p class="text-xs text-slateGray dark:text-slate-300 leading-relaxed mb-4">
-                            익숙한 환경에서 한 걸음 벗어나는 여행은 경직되어 있던 생각의 틀을 부드럽게 환기해 줍니다. 낯선 문화를 마주하고 일상을 낯설게 돌아보며, 시각의 유연성과 여유로운 마인드를 가득 충전하고 돌아옵니다.
-                        </p>
-                    </div>
-                    <div class="flex items-center justify-between text-[11px] font-bold text-mintDark dark:text-mintFresh bg-emerald-50 dark:bg-mintFresh/20 px-3 py-2 rounded-xl mt-2 z-10">
-                        <span>낯섦을 마주하는 용기</span>
-                        <span>생각의 리프레시 🌴</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Interactivity: Synergy Card Generator -->
-            <div class="bg-gradient-to-tr from-skyBreeze/40 via-white to-emerald-50/40 dark:from-slate-900/40 dark:to-slate-800/40 rounded-3xl p-6 md:p-8 border border-white dark:border-slate-800 shadow-premium">
-                <div class="text-center max-w-lg mx-auto">
-                    <span class="text-xs font-bold text-skyDeep dark:text-skyBreeze uppercase tracking-widest">Synergy Matcher</span>
-                    <h4 class="text-xl font-bold text-darkSlate dark:text-white mt-1 mb-2">취미가 개발 성장에 주는 선순환 효과</h4>
-                    <p class="text-xs text-slateGray dark:text-slate-400 mb-6">아래 수창님의 취미 아이콘을 각각 누르면, 해당 취미가 개발 공부에 어떤 긍정적인 에너지(시너지)로 치환되는지 확인할 수 있습니다.</p>
+                <!-- Keynotes (Interactive cards) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     
-                    <div class="grid grid-cols-2 gap-4 mb-6">
-                        <button onclick="triggerSynergy('gym')" class="bg-white dark:bg-slate-800 p-4 rounded-2xl border-2 border-slate-100 dark:border-slate-700 hover:border-skyDeep transition-all text-center hover-pulse">
-                            <span class="text-4xl block mb-2">🏋️‍♀️</span>
-                            <span class="text-xs font-bold text-slate-700 dark:text-slate-300 block">헬스 x 개발</span>
+                    <!-- Keyword Card 1: Consistency -->
+                    <div class="bg-white dark:bg-slate-900/80 rounded-2xl p-6 shadow-neo border border-slate-100 dark:border-slate-800 hover:shadow-premium hover:-translate-y-1 transition-all duration-300">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold text-skyDeep dark:text-skyBreeze bg-sky-50 dark:bg-skyDeep/20 px-3 py-1.5 rounded-full"># 핵심 키워드</span>
+                            <span class="text-emerald-500 dark:text-mintFresh font-bold text-xs uppercase tracking-widest">Growth Factor</span>
+                        </div>
+                        <h4 class="text-2xl font-bold text-darkSlate dark:text-white mt-3 mb-2 flex items-center gap-2">
+                            <span>#꾸준함</span>
+                            <span class="text-sm font-normal text-slateGray dark:text-slate-400">(Consistency)</span>
+                        </h4>
+                        <p class="text-slateGray dark:text-slate-300 text-sm leading-relaxed">
+                            목표한 바를 포기하지 않고 묵묵히 정진하는 과정을 즐깁니다. 지름길보다는 단단한 기초를 다집니다.
+                        </p>
+                        
+                        <!-- Click Trigger Button for Detail Reveal -->
+                        <button onclick="toggleKeywordDetail('detail-consistency')" class="mt-4 text-xs font-bold text-skyDeep dark:text-skyBreeze hover:text-sky-700 flex items-center gap-1 focus:outline-none">
+                            <span>세부 철학 및 스토리 열어보기</span>
+                            <svg id="arrow-detail-consistency" class="w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                         </button>
-                        <button onclick="triggerSynergy('travel')" class="bg-white dark:bg-slate-800 p-4 rounded-2xl border-2 border-slate-100 dark:border-slate-700 hover:border-mintFresh transition-all text-center hover-pulse">
-                            <span class="text-4xl block mb-2">✈️</span>
-                            <span class="text-xs font-bold text-slate-700 dark:text-slate-300 block">여행 x 개발</span>
+
+                        <!-- Hidden Slide Content -->
+                        <div id="detail-consistency" class="hidden mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-300 space-y-2 bg-slate-50 dark:bg-slate-800/50 p-3 rounded-lg leading-relaxed">
+                            <p class="font-semibold text-skyDeep dark:text-skyBreeze">"단 하나의 배움이라도 매일 내 것으로 만드는 힘"</p>
+                            <p>매일 배운 개념과 마주한 문제들을 상세히 복습하며 지식을 체계적으로 기록합니다. 어려운 설계 방식이나 신선한 로직도 끝까지 디버깅하여 동작의 전 과정을 이해하고 넘어가고자 합니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- Keyword Card 2: Novelty -->
+                    <div class="bg-white dark:bg-slate-900/80 rounded-2xl p-6 shadow-neo border border-slate-100 dark:border-slate-800 hover:shadow-premium hover:-translate-y-1 transition-all duration-300">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold text-mintDark dark:text-mintFresh bg-emerald-50 dark:bg-mintFresh/20 px-3 py-1.5 rounded-full"># 도전과 가치</span>
+                            <span class="text-skyDeep dark:text-skyBreeze font-bold text-xs uppercase tracking-widest">Tech Adventure</span>
+                        </div>
+                        <h4 class="text-2xl font-bold text-darkSlate dark:text-white mt-3 mb-2 flex items-center gap-2">
+                            <span>#새로움</span>
+                            <span class="text-sm font-normal text-slateGray dark:text-slate-400">(Novelty)</span>
+                        </h4>
+                        <p class="text-slateGray dark:text-slate-300 text-sm leading-relaxed">
+                            익숙함에 안주하지 않고 미지의 기술과 새로운 생태계를 탐구하는 도전 속에서 지혜를 넓혀 갑니다.
+                        </p>
+                        
+                        <!-- Click Trigger Button for Detail Reveal -->
+                        <button onclick="toggleKeywordDetail('detail-novelty')" class="mt-4 text-xs font-bold text-mintDark dark:text-mintFresh hover:text-mintFresh flex items-center gap-1 focus:outline-none">
+                            <span>세부 철학 및 스토리 열어보기</span>
+                            <svg id="arrow-detail-novelty" class="w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+
+                        <!-- Hidden Slide Content -->
+                        <div id="detail-novelty" class="hidden mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-300 space-y-2 bg-slate-50 dark:bg-slate-800/50 p-3 rounded-lg leading-relaxed">
+                            <p class="font-semibold text-mintDark dark:text-mintFresh">"변화와 트렌드를 즐겁게 마주하는 태도"</p>
+                            <p>웹 기술은 언제나 생명체처럼 변합니다. 낯선 설계 프레임워크나 툴에 기가 죽기보다는, 이를 '풀어낼 재미있는 퍼즐'로 받아들이는 호기심과 실행력이 성장의 원동력입니다.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ISFJ Detailed analysis -->
+                <div class="bg-white dark:bg-slate-900/80 rounded-3xl p-6 md:p-8 shadow-neo border border-slate-100 dark:border-slate-800">
+                    <h4 class="text-lg font-bold text-darkSlate dark:text-white mb-4 flex items-center gap-2">
+                        <span class="p-2 rounded-lg bg-sky-100 dark:bg-skyDeep/20 text-skyDeep dark:text-skyBreeze">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                        </span>
+                        성격유형 기반 학습 태도 (ISFJ: 수호자형 개발자)
+                    </h4>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span class="text-slateGray dark:text-slate-400">성실성 &amp; 디테일 (책임감 있는 구현)</span>
+                                <span class="text-skyDeep dark:text-skyBreeze">95%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
+                                <div class="bg-skyDeep h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span class="text-slateGray dark:text-slate-400">팀워크 &amp; 경청 (서로를 배려하는 소통 기술)</span>
+                                <span class="text-mintDark dark:text-mintFresh">90%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
+                                <div class="bg-mintFresh h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span class="text-slateGray dark:text-slate-400">유연성 및 새로운 기술 적응</span>
+                                <span class="text-indigo-600 dark:text-indigo-400">88%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
+                                <div class="bg-indigo-500 h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-emerald-50/50 dark:bg-emerald-950/20 rounded-xl border border-emerald-100/50 dark:border-emerald-900/30 text-xs text-slateGray dark:text-slate-300 leading-relaxed">
+                        <strong>ISFJ의 학습 장점:</strong> 타인의 필요를 헤아려 공동의 과업에 헌신적이며 조용히 완성도 높은 백업을 완수합니다. 개발에 임할 때 세심한 주석과 철저한 자가 검토를 통해 안정적이고 오류가 적은 코드를 빌드하는 능력이 뛰어납니다.
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- TAB 2 CONTENT: PHILOSOPHY (DEVELOPMENT BELIEFS) -->
+            <div id="tab-philosophy" class="tab-content hidden space-y-6">
+                
+                <!-- Core message banner -->
+                <div class="bg-gradient-to-r from-blue-50 to-emerald-50 dark:from-slate-800/40 dark:to-emerald-950/20 border-l-4 border-indigo-400 p-5 rounded-r-2xl shadow-sm">
+                    <p class="text-xs uppercase tracking-wider font-extrabold text-indigo-500 dark:text-indigo-300 mb-1">My Dev Philosophy</p>
+                    <h3 class="text-xl font-bold text-darkSlate dark:text-white">"동료들의 성장판을 자극하고 기꺼이 배울 점이 되어주는 개발자가 되고 싶습니다."</h3>
+                </div>
+
+                <!-- Philosophy Grid Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Belief 1: Solid Base -->
+                    <div class="bg-white dark:bg-slate-900/80 rounded-2xl p-6 shadow-neo border border-slate-100 dark:border-slate-800 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 bg-skyBreeze dark:bg-skyDeep/20 text-skyDeep rounded-xl flex items-center justify-center font-bold text-xl mb-4">🧱</div>
+                            <h4 class="text-lg font-bold text-darkSlate dark:text-white mb-2">단단한 기본기 중심</h4>
+                            <p class="text-xs text-slateGray dark:text-slate-300 leading-relaxed">
+                                화려한 프레임워크의 변화 속에서도 결국 중심을 잡아주는 것은 언어의 기초 지식과 논리입니다. 기술의 부채를 만들지 않는 단단하고 투명한 작동 방식에 집중합니다.
+                            </p>
+                        </div>
+                        <span class="text-[11px] font-semibold text-skyDeep dark:text-skyBreeze mt-4 block">#지름길보다_바른길</span>
+                    </div>
+
+                    <!-- Belief 2: Clean Documenting -->
+                    <div class="bg-white dark:bg-slate-900/80 rounded-2xl p-6 shadow-neo border border-slate-100 dark:border-slate-800 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 bg-emerald-50 dark:bg-mintFresh/20 text-mintDark rounded-xl flex items-center justify-center font-bold text-xl mb-4">📝</div>
+                            <h4 class="text-lg font-bold text-darkSlate dark:text-white mb-2">기록하고 소통하기</h4>
+                            <p class="text-xs text-slateGray dark:text-slate-300 leading-relaxed">
+                                동료가 빠르게 파악하고 이어 쓸 수 있는 흐름을 설계합니다. 명쾌한 문서화와 이해하기 쉬운 명명법은 성공적인 협업 프로세스의 기초 씨앗이 됩니다.
+                            </p>
+                        </div>
+                        <span class="text-[11px] font-semibold text-mintDark dark:text-mintFresh mt-4 block">#협업을_이끄는_기록</span>
+                    </div>
+
+                    <!-- Belief 3: User First -->
+                    <div class="bg-white dark:bg-slate-900/80 rounded-2xl p-6 shadow-neo border border-slate-100 dark:border-slate-800 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 bg-indigo-50 dark:bg-indigo-500/20 text-indigo-500 rounded-xl flex items-center justify-center font-bold text-xl mb-4">🤝</div>
+                            <h4 class="text-lg font-bold text-darkSlate dark:text-white mb-2">사려 깊은 개발</h4>
+                            <p class="text-xs text-slateGray dark:text-slate-300 leading-relaxed">
+                                수치적인 동작만을 충족하는 것이 아니라, 사용자가 진정으로 머무르며 편안함을 느낄 수 있는 세심한 UX 디테일과 인터랙션 경험을 중시합니다.
+                            </p>
+                        </div>
+                        <span class="text-[11px] font-semibold text-indigo-500 dark:text-indigo-300 mt-4 block">#배려가_담긴_인터랙션</span>
+                    </div>
+                </div>
+
+                <!-- Interactive Value Slider -->
+                <div class="bg-white dark:bg-slate-900/80 rounded-3xl p-6 md:p-8 shadow-neo border border-slate-100 dark:border-slate-800">
+                    <h4 class="text-lg font-bold text-darkSlate dark:text-white mb-3">수창이 바라보는 소중한 개발 가치</h4>
+                    <p class="text-xs text-slateGray dark:text-slate-400 mb-6">원하는 가치를 클릭해보세요! 수창님이 지향하는 가치에 대한 한 줄 신념이 공개됩니다.</p>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <button onclick="revealQuote('harmony')" class="py-3 px-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-skyDeep rounded-xl text-xs font-bold transition-all text-center dark:text-slate-300">
+                            🤝 협업과 소통
+                        </button>
+                        <button onclick="revealQuote('rolemodel')" class="py-3 px-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-skyDeep rounded-xl text-xs font-bold transition-all text-center dark:text-slate-300">
+                            🌟 배울 점이 있는 모델
+                        </button>
+                        <button onclick="revealQuote('empathy')" class="py-3 px-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-skyDeep rounded-xl text-xs font-bold transition-all text-center dark:text-slate-300">
+                            🧠 사용자 공감
+                        </button>
+                        <button onclick="revealQuote('clean')" class="py-3 px-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-skyDeep rounded-xl text-xs font-bold transition-all text-center dark:text-slate-300">
+                            💎 클린 코드
                         </button>
                     </div>
 
-                    <!-- Synergy reveal display board -->
-                    <div class="bg-white/80 dark:bg-slate-900/80 p-4 rounded-2xl border border-white/60 dark:border-slate-800 min-h-[90px] flex items-center justify-center">
-                        <div id="synergy-message-slot" class="text-xs text-slateGray dark:text-slate-300 font-medium leading-relaxed">
-                            아이콘을 누르면 소소한 성장 에너지 카드가 열립니다. 🌟
+                    <!-- Live quotes display slot -->
+                    <div class="mt-6 p-4 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800/40 dark:to-slate-850 rounded-2xl min-h-[70px] flex items-center justify-center text-center">
+                        <p id="quote-display-text" class="text-xs sm:text-sm font-semibold text-slateGray dark:text-slate-300 leading-relaxed">
+                            위 가치 버튼 중 하나를 클릭하면 수창님의 세부 신념을 살펴볼 수 있습니다. ✨
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- TAB 3 CONTENT: VITALITY (HOBBIES & COOLDOWN) -->
+            <div id="tab-vitality" class="tab-content hidden space-y-6">
+                
+                <!-- Core message banner -->
+                <div class="bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-slate-800/40 dark:to-teal-950/20 border-l-4 border-mintFresh p-5 rounded-r-2xl shadow-sm">
+                    <p class="text-xs uppercase tracking-wider font-extrabold text-mintDark dark:text-mintFresh mb-1">Vitality Core Message</p>
+                    <h3 class="text-xl font-bold text-darkSlate dark:text-white">"건강한 일상과 다채로운 경험으로 몰입의 밑바탕을 다집니다."</h3>
+                </div>
+
+                <!-- Introduction to light hobbies (Gym, Travel) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Hobby 1: Weight Training (헬스) -->
+                    <div class="bg-white dark:bg-slate-900/80 rounded-3xl p-6 border border-slate-100 dark:border-slate-800 shadow-neo flex flex-col justify-between overflow-hidden relative">
+                        <div class="absolute -right-8 -bottom-8 w-24 h-24 bg-skyBreeze/40 dark:bg-skyDeep/10 rounded-full"></div>
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="text-3xl">🏋️‍♂️</span>
+                                <div>
+                                    <h4 class="font-extrabold text-lg text-darkSlate dark:text-white">체력을 기르는 헬스</h4>
+                                    <span class="text-[10px] text-skyDeep dark:text-skyBreeze font-bold tracking-wider uppercase">Strength &amp; Focus</span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slateGray dark:text-slate-300 leading-relaxed mb-4">
+                                모든 몰입의 근본은 지치지 않는 탄탄한 체력에서 나온다고 믿습니다. 우직하게 무게를 올리는 웨이트 트레이닝은 개발 공부의 긴 레이스를 끈기 있게 견딜 수 있게 하는 든든한 일상의 코어 루틴입니다.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between text-[11px] font-bold text-skyDeep dark:text-skyBreeze bg-sky-50 dark:bg-skyDeep/20 px-3 py-2 rounded-xl mt-2 z-10">
+                            <span>꾸준함의 또 다른 이름</span>
+                            <span>매주 3~4회 단련 ⚡</span>
+                        </div>
+                    </div>
+
+                    <!-- Hobby 2: Travel (여행) -->
+                    <div class="bg-white dark:bg-slate-900/80 rounded-3xl p-6 border border-slate-100 dark:border-slate-800 shadow-neo flex flex-col justify-between overflow-hidden relative">
+                        <div class="absolute -right-8 -bottom-8 w-24 h-24 bg-emerald-50/40 dark:bg-mintFresh/10 rounded-full"></div>
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="text-3xl">✈️</span>
+                                <div>
+                                    <h4 class="font-extrabold text-lg text-darkSlate dark:text-white">새로운 시야를 여는 여행</h4>
+                                    <span class="text-[10px] text-mintDark dark:text-mintFresh font-bold tracking-wider uppercase">Exploration &amp; Insight</span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slateGray dark:text-slate-300 leading-relaxed mb-4">
+                                익숙한 환경에서 한 걸음 벗어나는 여행은 경직되어 있던 생각의 틀을 부드럽게 환기해 줍니다. 낯선 문화를 마주하고 일상을 낯설게 돌아보며, 시각의 유연성과 여유로운 마인드를 가득 충전하고 돌아옵니다.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between text-[11px] font-bold text-mintDark dark:text-mintFresh bg-emerald-50 dark:bg-mintFresh/20 px-3 py-2 rounded-xl mt-2 z-10">
+                            <span>낯섦을 마주하는 용기</span>
+                            <span>생각의 리프레시 🌴</span>
                         </div>
                     </div>
                 </div>
+
+                <!-- Synergy Matcher -->
+                <div class="bg-gradient-to-tr from-skyBreeze/40 via-white to-emerald-50/40 dark:from-slate-900/40 dark:to-slate-800/40 rounded-3xl p-6 md:p-8 border border-white dark:border-slate-800 shadow-premium">
+                    <div class="text-center max-w-lg mx-auto">
+                        <span class="text-xs font-bold text-skyDeep dark:text-skyBreeze uppercase tracking-widest">Synergy Matcher</span>
+                        <h4 class="text-xl font-bold text-darkSlate dark:text-white mt-1 mb-2">취미가 개발 성장에 주는 선순환 효과</h4>
+                        <p class="text-xs text-slateGray dark:text-slate-400 mb-6">아래 수창님의 취미 아이콘을 각각 누르면, 해당 취미가 개발 공부에 어떤 긍정적인 에너지(시너지)로 치환되는지 확인할 수 있습니다.</p>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <button onclick="triggerSynergy('gym')" class="bg-white dark:bg-slate-800 p-4 rounded-2xl border-2 border-slate-100 dark:border-slate-700 hover:border-skyDeep transition-all text-center hover-pulse">
+                                <span class="text-4xl block mb-2">🏋️‍♀️</span>
+                                <span class="text-xs font-bold text-slate-700 dark:text-slate-300 block">헬스 x 개발</span>
+                            </button>
+                            <button onclick="triggerSynergy('travel')" class="bg-white dark:bg-slate-800 p-4 rounded-2xl border-2 border-slate-100 dark:border-slate-700 hover:border-mintFresh transition-all text-center hover-pulse">
+                                <span class="text-4xl block mb-2">✈️</span>
+                                <span class="text-xs font-bold text-slate-700 dark:text-slate-300 block">여행 x 개발</span>
+                            </button>
+                        </div>
+
+                        <!-- Synergy reveal display board -->
+                        <div class="bg-white/80 dark:bg-slate-900/80 p-4 rounded-2xl border border-white/60 dark:border-slate-800 min-h-[90px] flex items-center justify-center">
+                            <div id="synergy-message-slot" class="text-xs text-slateGray dark:text-slate-300 font-medium leading-relaxed">
+                                아이콘을 누르면 소소한 성장 에너지 카드가 열립니다. 🌟
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- TAB 4 CONTENT: CONTACT (INFO) -->
+            <div id="tab-contact" class="tab-content hidden space-y-6">
+                
+                <!-- Core message banner -->
+                <div class="bg-gradient-to-r from-sky-50 to-teal-50 dark:from-slate-800/40 dark:to-teal-950/20 border-l-4 border-mintFresh p-5 rounded-r-2xl shadow-sm">
+                    <p class="text-xs uppercase tracking-wider font-extrabold text-mintDark dark:text-mintFresh mb-1">Get In Touch</p>
+                    <h3 class="text-xl font-bold text-darkSlate dark:text-white">"함께 나누는 이야기 속에서 더 큰 가치가 피어납니다."</h3>
+                </div>
+
+                <!-- Contact details elegant card deck -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Call card -->
+                    <div class="bg-white dark:bg-slate-900/80 rounded-3xl p-6 md:p-8 shadow-neo border border-slate-100 dark:border-slate-800 flex flex-col justify-between relative overflow-hidden group">
+                        <div class="absolute -right-12 -top-12 w-32 h-32 bg-skyBreeze/30 dark:bg-skyDeep/10 rounded-full blur-xl transition-all duration-300 group-hover:scale-110"></div>
+                        
+                        <div>
+                            <div class="w-12 h-12 bg-sky-50 dark:bg-skyDeep/15 text-skyDeep rounded-2xl flex items-center justify-center font-bold text-2xl mb-5">
+                                📞
+                            </div>
+                            <span class="text-xs font-bold text-skyDeep dark:text-skyBreeze uppercase tracking-widest">Phone Call</span>
+                            <h4 class="text-2xl font-black text-darkSlate dark:text-white mt-1 mb-2 tracking-tight">010-2510-9805</h4>
+                            <p class="text-xs text-slateGray dark:text-slate-400 leading-relaxed">
+                                언제든 가볍게 연락해 주세요. 사소한 기술 고민부터 커피 챗까지 성실하게 경청할 준비가 되어 있습니다.
+                            </p>
+                        </div>
+
+                        <div class="mt-8 grid grid-cols-2 gap-3 z-10">
+                            <a href="tel:01025109805" class="py-3 px-4 bg-skyDeep hover:bg-sky-600 text-white font-bold text-xs rounded-xl shadow-md transition-colors text-center block">
+                                전화 걸기 📞
+                            </a>
+                            <button onclick="copyToClipboard('01025109805')" class="py-3 px-4 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-darkSlate dark:text-slate-300 font-bold text-xs rounded-xl transition-colors text-center focus:outline-none">
+                                번호 복사 📋
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Email card -->
+                    <div class="bg-white dark:bg-slate-900/80 rounded-3xl p-6 md:p-8 shadow-neo border border-slate-100 dark:border-slate-800 flex flex-col justify-between relative overflow-hidden group">
+                        <div class="absolute -right-12 -top-12 w-32 h-32 bg-emerald-50/30 dark:bg-mintFresh/10 rounded-full blur-xl transition-all duration-300 group-hover:scale-110"></div>
+                        
+                        <div>
+                            <div class="w-12 h-12 bg-emerald-50 dark:bg-mintFresh/15 text-mintDark rounded-2xl flex items-center justify-center font-bold text-2xl mb-5">
+                                ✉️
+                            </div>
+                            <span class="text-xs font-bold text-mintDark dark:text-mintFresh uppercase tracking-widest">Email Message</span>
+                            <h4 class="text-xl sm:text-2xl font-black text-darkSlate dark:text-white mt-1 mb-2 tracking-tight break-all">iso042597@gmail.com</h4>
+                            <p class="text-xs text-slateGray dark:text-slate-400 leading-relaxed">
+                                공식적인 제안이나 깊은 스터디 요청 등 텍스트로 자세한 이야기를 나눌 때 가장 좋아하는 소통 도구입니다.
+                            </p>
+                        </div>
+
+                        <div class="mt-8 grid grid-cols-2 gap-3 z-10">
+                            <a href="mailto:iso042597@gmail.com" class="py-3 px-4 bg-mintFresh hover:bg-mintDark text-white font-bold text-xs rounded-xl shadow-md transition-colors text-center block">
+                                메일 보내기 ✉️
+                            </a>
+                            <button onclick="copyToClipboard('iso042597@gmail.com')" class="py-3 px-4 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-darkSlate dark:text-slate-300 font-bold text-xs rounded-xl transition-colors text-center focus:outline-none">
+                                메일 복사 📋
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
@@ -549,8 +602,35 @@
     <div class="custom-cursor"></div>
     <div class="custom-cursor-outline"></div>
 
+    <!-- Reusable Premium Toast Popup (Avoids alert blocker) -->
+    <div id="custom-toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-gradient-to-r from-skyDeep to-mintDark text-white px-6 py-3 rounded-full text-xs font-bold shadow-premium z-[9999] opacity-0 translate-y-4 pointer-events-none transition-all duration-300">
+        정보가 클립보드에 안전하게 복사되었습니다! ✨
+    </div>
+
     <!-- INTERACTION SCRIPTS -->
     <script>
+        // Silent Hybrid Loader for Profile Image
+        function onImageLoadSuccess() {
+            const img = document.getElementById('profile-img');
+            const fallback = document.getElementById('profile-text-fallback');
+            img.classList.remove('opacity-0');
+            img.classList.add('opacity-100');
+            if (fallback) {
+                fallback.style.display = 'none'; // Hide text fallback gracefully
+            }
+        }
+
+        function onImageLoadError() {
+            const img = document.getElementById('profile-img');
+            // Try secondary path if primary fails
+            if (img.getAttribute('src') === 'image_e48497.png') {
+                img.setAttribute('src', 'KakaoTalk_20260513_143914672.jpg');
+            } else {
+                // Both failed - hide image tag fully to avoid browser broken icon display
+                img.style.display = 'none';
+            }
+        }
+
         // Custom Interactive Cursor Logic
         const cursorDot = document.querySelector('.custom-cursor');
         const cursorOutline = document.querySelector('.custom-cursor-outline');
@@ -571,15 +651,18 @@
         });
 
         // Toggle hover effect on interactive elements
-        const hoverTargets = 'button, a, input, textarea, .hover-pulse, .nav-item';
-        document.querySelectorAll(hoverTargets).forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                document.body.classList.add('cursor-hovering');
+        function updateHoverTargets() {
+            const hoverTargets = 'button, a, input, textarea, .hover-pulse, .nav-item';
+            document.querySelectorAll(hoverTargets).forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    document.body.classList.add('cursor-hovering');
+                });
+                el.addEventListener('mouseleave', () => {
+                    document.body.classList.remove('cursor-hovering');
+                });
             });
-            el.addEventListener('mouseleave', () => {
-                document.body.classList.remove('cursor-hovering');
-            });
-        });
+        }
+        updateHoverTargets();
 
         // Canvas Particle Background Logic
         const canvas = document.getElementById('particle-canvas');
@@ -672,62 +755,29 @@
             }
         })();
 
-        // Mobile Navigation Hamburger Toggle Logic
-        function toggleMobileMenu() {
-            const drawer = document.getElementById('mobile-drawer');
-            const hamburgerIcon = document.getElementById('hamburger-icon');
-            const closeIcon = document.getElementById('close-icon');
-
-            if (drawer.classList.contains('hidden')) {
-                drawer.classList.remove('hidden');
-                hamburgerIcon.classList.add('hidden');
-                closeIcon.classList.remove('hidden');
-            } else {
-                drawer.classList.add('hidden');
-                hamburgerIcon.classList.remove('hidden');
-                closeIcon.classList.add('hidden');
-            }
-        }
-
-        // Tab switching logic with smooth transition animations and unified menu styles
+        // Localized Tab switching logic with smooth transition animations inside content card
         function switchTab(tabId) {
             const navButtons = document.querySelectorAll('.nav-item');
-            const mobileNavButtons = document.querySelectorAll('.mobile-nav-item');
             const contents = document.querySelectorAll('.tab-content');
 
-            // 1. Desktop Nav Button UI reset
+            // 1. Tab Button UI Reset to Non-Active Style
             navButtons.forEach(btn => {
-                btn.classList.remove('bg-gradient-to-r', 'from-skyDeep', 'to-sky-600', 'text-white', 'shadow-sm');
-                btn.classList.add('text-slate-500', 'dark:text-slate-400', 'hover:text-darkSlate', 'dark:hover:text-white', 'hover:bg-slate-100', 'dark:hover:bg-slate-700');
+                btn.className = "nav-item py-3 text-xs md:text-sm font-extrabold rounded-xl transition-all duration-300 text-slate-500 dark:text-slate-400 hover:text-darkSlate dark:hover:text-white hover:bg-white/80 dark:hover:bg-slate-800 focus:outline-none";
             });
 
-            // 2. Mobile Nav Button UI reset
-            mobileNavButtons.forEach(btn => {
-                btn.classList.remove('bg-gradient-to-r', 'from-skyDeep', 'to-sky-600', 'text-white', 'shadow-sm');
-                btn.classList.add('text-slate-600', 'dark:text-slate-400', 'hover:bg-slate-50', 'dark:hover:bg-slate-850');
-            });
-
-            // 3. Tab contents hide
+            // 2. Hide all tab content
             contents.forEach(content => {
                 content.classList.remove('active');
                 content.classList.add('hidden');
             });
 
-            // 4. Activate chosen Desktop Nav Button
-            const activeDesktopBtn = document.getElementById(`nav-btn-${tabId}`);
-            if (activeDesktopBtn) {
-                activeDesktopBtn.classList.remove('text-slate-500', 'dark:text-slate-400', 'hover:text-darkSlate', 'dark:hover:text-white', 'hover:bg-slate-100', 'dark:hover:bg-slate-700');
-                activeDesktopBtn.classList.add('bg-gradient-to-r', 'from-skyDeep', 'to-sky-600', 'text-white', 'shadow-sm');
+            // 3. Apply Premium Gradient Active Style to Selected Button
+            const activeBtn = document.getElementById(`nav-btn-${tabId}`);
+            if (activeBtn) {
+                activeBtn.className = "nav-item py-3 text-xs md:text-sm font-extrabold rounded-xl transition-all duration-300 text-white bg-gradient-to-r from-skyDeep to-sky-600 shadow-sm focus:outline-none";
             }
 
-            // 5. Activate chosen Mobile Nav Button
-            const activeMobileBtn = document.getElementById(`mobile-nav-btn-${tabId}`);
-            if (activeMobileBtn) {
-                activeMobileBtn.classList.remove('text-slate-600', 'dark:text-slate-400', 'hover:bg-slate-50', 'dark:hover:bg-slate-850');
-                activeMobileBtn.classList.add('bg-gradient-to-r', 'from-skyDeep', 'to-sky-600', 'text-white', 'shadow-sm');
-            }
-
-            // 6. Active content display with micro-delay for smooth animation transition
+            // 4. Reveal content with micro-delay for smooth layout transform
             const activeContent = document.getElementById(`tab-${tabId}`);
             if (activeContent) {
                 activeContent.classList.remove('hidden');
@@ -735,6 +785,9 @@
                     activeContent.classList.add('active');
                 }, 50);
             }
+
+            // Re-apply cursor bindings for dynamic contents
+            updateHoverTargets();
         }
 
         // Keyword details toggle slider (GROWTH Tab)
@@ -783,6 +836,36 @@
                 slot.style.opacity = '1';
                 slot.className = "text-xs font-semibold text-slate-700 dark:text-slate-200 leading-relaxed transition-all duration-300 bg-skyBreeze/30 dark:bg-skyDeep/10 p-3 rounded-xl border border-skyBreeze/70 dark:border-slate-700";
             }, 150);
+        }
+
+        // Contact Tab: Premium Clipboard Copying & custom Toast Alert
+        function copyToClipboard(text) {
+            const tempInput = document.createElement('textarea');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showToast();
+                }
+            } catch (err) {
+                console.error('복사 중 오류 발생:', err);
+            }
+            
+            document.body.removeChild(tempInput);
+        }
+
+        function showToast() {
+            const toast = document.getElementById('custom-toast');
+            toast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+            toast.classList.add('opacity-100', 'translate-y-0');
+            
+            setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+                toast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+            }, 2500);
         }
     </script>
 </body>
